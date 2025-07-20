@@ -4,7 +4,6 @@ import { useState, useEffect } from "react"
 import Image from "next/image"
 import { X } from "lucide-react"
 import { HoverCard, StaggerContainer, StaggerItem } from "@/components/motion"
-import { Placeholder } from "@/components/placeholder"
 
 interface GalleryImage {
   src: string
