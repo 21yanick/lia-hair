@@ -1,7 +1,9 @@
+import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { Logo } from "@/components/logo"
 import { Placeholder } from "@/components/placeholder"
 import { Gallery } from "@/components/gallery"
+import { TerminDialog } from "@/components/termin-dialog"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Phone, MapPin, Clock } from "lucide-react"
@@ -31,28 +33,30 @@ export default function Home() {
               <div>
                 <RevealOnScroll>
                   <h1 className="text-hero font-bold mb-6">
-                    Zeit für Sie
-                    <span className="block text-primary">und Ihre Haare</span>
+                    Zeit für dich
+                    <span className="block text-primary">und deine Haare</span>
                   </h1>
                 </RevealOnScroll>
                 <RevealOnScroll delay={0.2}>
                   <p className="text-xl text-muted-foreground mb-8 max-w-md leading-relaxed">
-                    Mehr als nur Haarschnitt – hier bekommen Sie die Zeit 
-                    und Aufmerksamkeit, die Sie verdienen.
+                    Mehr als nur Haarschnitt – hier bekommst du die Zeit 
+                    und Aufmerksamkeit, die du verdienst.
                   </p>
                 </RevealOnScroll>
                 <RevealOnScroll delay={0.4}>
                   <div className="flex gap-4 flex-col sm:flex-row">
                     <ButtonHover>
-                      <Button size="lg" className="text-lg px-8 py-6 shadow-lg min-h-[56px]" asChild>
+                      <TerminDialog>
+                        <Button size="lg" className="text-lg px-8 py-6 shadow-lg min-h-[56px]">
+                          Termin vereinbaren
+                        </Button>
+                      </TerminDialog>
+                    </ButtonHover>
+                    <ButtonHover>
+                      <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass-subtle min-h-[56px]" asChild>
                         <a href="tel:+41791976484">
                           Jetzt anrufen
                         </a>
-                      </Button>
-                    </ButtonHover>
-                    <ButtonHover>
-                      <Button variant="outline" size="lg" className="text-lg px-8 py-6 glass-subtle min-h-[56px]">
-                        Portfolio ansehen
                       </Button>
                     </ButtonHover>
                   </div>
@@ -60,12 +64,16 @@ export default function Home() {
               </div>
               <RevealOnScroll delay={0.6} direction="right">
                 <HoverCard scale={1.05} lift={8}>
-                  <Placeholder 
-                    type="image" 
-                    size="xl" 
-                    aspect="square"
-                    className="w-full max-w-md mx-auto shadow-2xl"
-                  />
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-md mx-auto">
+                    <Image 
+                      src="/images/hero.png" 
+                      alt="Professioneller Haarschnitt bei Lia Hair" 
+                      width={500}
+                      height={500}
+                      className="w-full object-cover aspect-square"
+                      priority
+                    />
+                  </div>
                 </HoverCard>
               </RevealOnScroll>
             </div>
@@ -88,12 +96,12 @@ export default function Home() {
                       </div>
                       <CardTitle className="text-primary">Haarschnitt & Styling</CardTitle>
                       <CardDescription>
-                        Schnitte, die zu Ihnen passen
+                        Schnitte, die zu dir passen
                       </CardDescription>
                     </CardHeader>
                     <CardContent>
                       <p className="text-sm text-muted-foreground">
-                        Klassisch oder modern - ich finde den Schnitt, der Ihre Persönlichkeit unterstreicht.
+                        Klassisch oder modern - ich finde den Schnitt, der deine Persönlichkeit unterstreicht.
                       </p>
                     </CardContent>
                   </Card>
@@ -161,12 +169,15 @@ export default function Home() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               <RevealOnScroll direction="left">
                 <HoverCard scale={1.03} lift={8}>
-                  <Placeholder 
-                    type="person" 
-                    size="xl" 
-                    aspect="portrait"
-                    className="w-full max-w-sm mx-auto shadow-2xl rounded-2xl overflow-hidden"
-                  />
+                  <div className="relative overflow-hidden rounded-2xl shadow-2xl max-w-sm mx-auto">
+                    <Image 
+                      src="/images/003.jpg" 
+                      alt="Lia - deine Friseurin in Bellach" 
+                      width={400}
+                      height={533}
+                      className="w-full object-cover aspect-[3/4]"
+                    />
+                  </div>
                 </HoverCard>
               </RevealOnScroll>
               <div>
@@ -177,22 +188,22 @@ export default function Home() {
                   <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
                     Willkommen in meinem Salon in Bellach! Ich schneide und style Haare 
                     mit Freude und langjähriger Erfahrung. Jeder Kunde ist mir wichtig - 
-                    nehmen Sie sich die Zeit, die Sie brauchen.
+                    nimm dir die Zeit, die du brauchst.
                   </p>
                 </RevealOnScroll>
                 <RevealOnScroll direction="right" delay={0.4}>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
                     Von klassischen Schnitten bis zu modernen Trends - 
-                    gemeinsam finden wir den Look, der zu Ihnen passt.
+                    gemeinsam finden wir den Look, der zu dir passt.
                   </p>
                 </RevealOnScroll>
                 <RevealOnScroll direction="right" delay={0.6}>
                   <ButtonHover>
-                    <Button variant="outline" size="lg" className="glass-subtle" asChild>
-                      <a href="tel:+41791976484">
+                    <TerminDialog>
+                      <Button variant="outline" size="lg" className="glass-subtle">
                         Beratung vereinbaren
-                      </a>
-                    </Button>
+                      </Button>
+                    </TerminDialog>
                   </ButtonHover>
                 </RevealOnScroll>
               </div>
