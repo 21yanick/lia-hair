@@ -11,7 +11,7 @@ interface LogoProps {
 }
 
 export function Logo({ width = 120, height = 40, className = "" }: LogoProps) {
-  const { theme, resolvedTheme } = useTheme()
+  const { resolvedTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
